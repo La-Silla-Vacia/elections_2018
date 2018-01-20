@@ -55,6 +55,10 @@ export default class Filters extends Component {
         options = this.generateOptions(item.column);
       }
 
+      options.sort(function (a, b) {
+        return (a.label > b.label) ? 1 : ((b.label > a.label) ? -1 : 0);
+      });
+
       options.unshift({ label: "Todos", value: null });
 
       return {
@@ -177,6 +181,9 @@ export default class Filters extends Component {
           )
         })}
 
+        <button className={s.searchBtn}
+                style={{ backgroundImage: `url(http://lasillavacia.com/sites/all/themes/lasillavacia/images/search.svg)` }}>
+        </button>
         {/*<form className={s.form}>*/}
         {/*<input*/}
         {/*id={`input-${s.nameInput}`}*/}

@@ -9,7 +9,6 @@
 
 .box {
   position: relative;
-  height: 3em;
 }
 
 .arrow {
@@ -39,7 +38,11 @@
   width: 100%;
   max-height: 25em;
   overflow: auto;
+  min-width: 9em;
+}
 
+.options.open {
+  border-top: 1px solid currentColor;
 }
 
 .open {
@@ -87,6 +90,10 @@
   border-radius: 5px 5px 0 0;
 }
 
-.bordered .toggle{
+.toggle.open {
+  border-bottom: 0;
+}
+
+.bordered .toggle {
   border-radius: 5px;
 }

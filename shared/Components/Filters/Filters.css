@@ -1,5 +1,6 @@
 .root {
   margin-bottom: 1em;
+  position: relative;
 }
 
 .selects {
@@ -98,4 +99,16 @@
 
 .activeFilter:hover .cross::after {
   transform: rotate(-45deg);
+}
+
+.searchBtn {
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
