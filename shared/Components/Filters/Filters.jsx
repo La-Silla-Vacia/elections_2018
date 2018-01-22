@@ -184,6 +184,7 @@ export default class Filters extends Component {
         <button className={s.searchBtn}
                 style={{ backgroundImage: `url(http://lasillavacia.com/sites/all/themes/lasillavacia/images/search.svg)` }}>
         </button>
+
         {/*<form className={s.form}>*/}
         {/*<input*/}
         {/*id={`input-${s.nameInput}`}*/}

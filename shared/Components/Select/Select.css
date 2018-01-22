@@ -63,6 +63,7 @@
 
 .open .option {
   box-shadow: 0 -1px 0 currentColor;
+  font-size: 14px;
 }
 
 .option:last-child {
