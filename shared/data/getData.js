@@ -30,7 +30,7 @@ function formatData(data) {
     const pattern = /^((http|https|ftp):\/\/)/;
   let fotoUrl = item.AQ;
   if(!pattern.test(fotoUrl)) {
-    fotoUrl = `http://archivo.lasillavacia.com/archivos/historias/candidatoscongreso2018/${(item.AQ) ? item.AQ : '60.jpg'}`
+    fotoUrl = `https://lsv-archivo.imgix.net/candidatoscongreso2018/${(item.AQ) ? item.AQ : '60.jpg'}`
   }
 
   return {
@@ -39,20 +39,21 @@ function formatData(data) {
     apellido2: item.B,
     nombres: item.C,
     name: `${item.C} ${item.A} ${item.B}`,
-    perfilDeQuienEsQuien: item.F,
-    twitter: item.G,
-    votosMasRecientes: item.J,
-    enQueEleccionSacoLosVotosMasRecientes: item.K,
-    camara: item.M.trim(),
-    genero: item.N.trim(),
-    partido: item.P.trim(),
-    numeroEnElTarjeton: item.Q,
-    posicionIz_der1A100: item.R,
-    departamento: item.S.trim(),
-    profesionUOficio: item.U.trim(),
-    nivelDeEstudios: item.V.trim(),
-    sectorDelQueViene: item.W,
-    expertoEn: item.X.trim(),
+    perfilDeQuienEsQuien: item.G,
+    twitter: item.H,
+    votosMasRecientes: item.K,
+    enQueEleccionSacoLosVotosMasRecientes: item.L,
+    birthyear: item.M,
+    camara: item.N ? item.N.trim() : item.N,
+    genero: item.O ? item.O.trim() : item.O,
+    partido: item.Q ? item.Q.trim() : item.Q,
+    numeroEnElTarjeton: item.R,
+    posicionIz_der1A100: item.S,
+    departamento: item.D ? item.D.trim() : item.D,
+    profesionUOficio: item.U,
+    nivelDeEstudios: item.V,
+    sectorDelQueViene: item.W ? item.W.trim() : item.W,
+    expertoEn: item.X ? item.X.trim() : item.X,
     tieneInvestigacionesPenales: item.Y,
     haSidoCondenado: item.Z,
     haSidoDestituido: item.AA,
@@ -76,10 +77,10 @@ function formatData(data) {
     saltoCamaraSenado: item.AS,
     precandidatoQueApoyaba: item.AT,
     candidatoPresidencialQueApoya: item.AU,
-    bandera1: item.AV,
-    bandera2: item.AW,
-    bandera3: item.AX,
-    esAfro: item.AY
+    banderas: [item.AV, item.AW, item.AX],
+    esAfro: item.AY,
+    minoria: item.BH,
+    grupo: item.BI
   }
 });
 }
