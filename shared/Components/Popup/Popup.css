@@ -257,7 +257,6 @@
 
 .listRows td {
   padding: 6px 2px;
-  border-bottom: 1px solid map(colors, secondary, light)
 }
 
 .posneg {
@@ -286,6 +285,17 @@
 .unlike svg {
   width: 2em;
   height: 2em;
+  background-color: #E7EBEB;
+  border-radius: 50%;
+}
+
+.chosen svg {
+  background-color: map(colors, primary, base);
+}
+
+.error {
+  font-size: .8em;
+  font-style: italic;
 }
 
 .outgoingLink {

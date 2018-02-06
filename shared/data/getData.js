@@ -79,8 +79,17 @@ function formatData(data) {
     candidatoPresidencialQueApoya: item.AU,
     banderas: [item.AV, item.AW, item.AX],
     esAfro: item.AY,
+    edad: item.BD,
     minoria: item.BH,
-    grupo: item.BI
+    grupo: item.BI,
+    partidoFilter: item.BZ,
+    comoVota: [
+      {title: "Voto Pretelt, 24 agosto 2016, Senado", value: item.BJ },
+      {title: "Refrendación de acuerdo de paz", value: item.BM },
+      {title: "Referendo adopción igualitaria", value: item.BP },
+      {title: "Reforma tributaria", value: item.BV },
+      {title: "Amnistía Farc", value: item.BW }
+    ]
   }
 });
 }

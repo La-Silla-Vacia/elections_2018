@@ -43,7 +43,7 @@ export default class Popup extends Component {
 
   render () {
     const { open, mounted } = this.state;
-    const { name, camara, partido, foto, votosMasRecientes, enQueEleccionSacoLosVotosMasRecientes, perfilito, departamento, posicionIz_der1A100, banderas } = this.props;
+    const { name, camara, partido, foto, votosMasRecientes, enQueEleccionSacoLosVotosMasRecientes, perfilito, departamento, posicionIz_der1A100, banderas, comoVota } = this.props;
     return (
       <div className={cN(s.root, { [s.mounted]: mounted })}>
         <div className={s.overlay} onClick={this.handleClose} />
@@ -105,12 +105,19 @@ export default class Popup extends Component {
               </tr>
               </thead>
               <tbody>
-              {[0, 0].map((pos, i) => {
+              {comoVota.map((pos, i) => {
                 return (
                   <tr key={i}>
-                    <td width={500}>{pos.title}Bier en titel</td>
-                    <td className={s.like} dangerouslySetInnerHTML={{ __html: like }} />
-                    <td className={s.unlike} dangerouslySetInnerHTML={{ __html: unlike }} />
+                    <td width={500}>{pos.title}</td>
+                    {(pos.value.trim() !== 'Sí' && pos.value.trim() !== 'No') ?
+                      <td colSpan={2}><span className={s.error}>{pos.value}</span></td>
+                      : <React.Fragment>
+                        <td className={cN(s.like, { [s.chosen]: pos.value === 'Sí' })}
+                            dangerouslySetInnerHTML={{ __html: like }} />
+                        <td className={cN(s.unlike, { [s.chosen]: pos.value === 'No' })}
+                            dangerouslySetInnerHTML={{ __html: unlike }} />
+                      </React.Fragment>
+                    }
                   </tr>
                 )
               })}
@@ -132,7 +139,7 @@ export default class Popup extends Component {
 
           <footer className={s.section}>
             <h4>Última Votación</h4>
-            {enQueEleccionSacoLosVotosMasRecientes ?
+            {enQueEleccionSacoLosVotosMasRecientes && (enQueEleccionSacoLosVotosMasRecientes !== 'No aplica') ?
               <div className={s.espectro__footer}>
                 <div className={s.espectro__footer__item}>
                   {enQueEleccionSacoLosVotosMasRecientes.substring(0, enQueEleccionSacoLosVotosMasRecientes.lastIndexOf(" ") + 1)}<br />
