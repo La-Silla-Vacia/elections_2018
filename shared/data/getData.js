@@ -30,7 +30,7 @@ function formatData(data) {
     const pattern = /^((http|https|ftp):\/\/)/;
   let fotoUrl = item.AQ;
   if(!pattern.test(fotoUrl)) {
-    fotoUrl = `https://lsv-archivo.imgix.net/candidatoscongreso2018/${(item.AQ) ? item.AQ : '60.jpg'}`
+    fotoUrl = `http://archivo.lasillavacia.com/archivos/historias/candidatoscongreso2018/${(item.AQ) ? item.AQ : '60.jpg'}`
   }
 
   return {
@@ -49,9 +49,11 @@ function formatData(data) {
     partido: item.Q ? item.Q.trim() : item.Q,
     numeroEnElTarjeton: item.R,
     posicionIz_der1A100: item.S,
+    subregionProvinciaOLocalidad: item.T,
     departamento: item.D ? item.D.trim() : item.D,
     profesionUOficio: item.U,
     nivelDeEstudios: item.V,
+    estudios: item.BD,
     sectorDelQueViene: item.W ? item.W.trim() : item.W,
     expertoEn: item.X ? item.X.trim() : item.X,
     tieneInvestigacionesPenales: item.Y,
@@ -69,6 +71,7 @@ function formatData(data) {
     herederoDeVotosDeCondenados: item.AK,
     herederoDeVotosDeInvestigados: item.AL,
     cuestionado: item.AM,
+    tieneLiosOCuestionamientos: item.BF,
     tieneFamiliarEnLaPolitica: item.AN,
     esHerederoPolitico: item.AO,
     perfilito: item.AP,
